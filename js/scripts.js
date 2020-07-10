@@ -1,7 +1,17 @@
-
+ 
 // Menu Mobile
 
+document.getElementById("hamburguer-icon").onclick = function() {
 
+  document.getElementById("sliding-header-menu-outer").style.right ="0";
+};
+
+document.getElementById("sliding-header-menu-close-button").onclick = function() {
+
+  document.getElementById("sliding-header-menu-outer").style.right ="-320px";
+};
+
+//  Para o menu deslizar é so ir em cc/_header.scss e colocar o transition 
 
 
 // About us Tab

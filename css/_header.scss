@@ -135,7 +135,7 @@ $header-shadow: rgba(0, 0, 0, 0.12);
          width: 320px;
          height: 100%;
          @include box-shadow(0px, 2px, 4px, 1px, $header-shadow);
-         @include transition(right,300ms,ease-out);
+         @include transition(right,300ms,ease-out); // Isso é oque faz o menu deslizar
       
          .sliding-header-menu {
             height: 100vh;
