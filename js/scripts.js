@@ -115,3 +115,6 @@ ano_atual = ano_atual.getFullYear();
 
 document.getElementById("current_year").innerHTML = ano_atual;
   
+
+
+// AIzaSyDxVaBeAMjvqJyUj9SdxsEPRg1s2ZYLG50
