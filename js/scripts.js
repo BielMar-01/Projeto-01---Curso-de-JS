@@ -22,9 +22,32 @@ var aboutUs = {
   "Valores": "<ul><li>Comprometimento</li><li>Inovação</li><li>Ética profissional</li><li>Superação dos resultados</li><li>Melhoria contínua</li></ul>"
 };
 
-var unseletected_color = "#646872";
-var seletected_color = "#2A2D34";
+var unselected_color = "#646872";
+var selected_color = "#2A2D34";
 
+var about_tags = document.getElementsByClassName("single-tab");
+
+for (var a = 0; a < about_tags.length; a++) {
+
+  about_tags[a].onclick = function() {
+
+    for (var b = 0; b < about_tags.length; b++) {
+
+      about_tags[b].style['background-color'] = unselected_color;
+      about_tags[b].style['font-weight'] = "normal";
+
+    }
+
+    this.style['background-color'] = selected_color;
+    this.style['font-weight'] = "bold";
+
+    var selecionado =  this.innerHTML;
+
+    document.getElementById("box-text").innerHTML = aboutUs[selecionado];
+
+  };
+
+}
 
 
 // Slider de serviços
@@ -46,6 +69,42 @@ var our_services = [
   }
   
 ];
+
+var servico_atual = 0;
+
+
+// Botão de voltar
+document.getElementById("service-previous").onclick = function() {
+
+  if (servico_atual == 0) {
+    var servico_anterior = our_services.length - 1;
+  }else{
+    var servico_anterior = servico_atual - 1;
+  }
+
+  document.getElementById("service-title").innerHTML = our_services[servico_anterior].title;
+
+  document.getElementById("service-text").innerHTML = our_services[servico_anterior].text;
+
+  servico_atual = servico_anterior;
+};
+
+
+// Botão de proximo
+document.getElementById("service-next").onclick = function() {
+
+  if(servico_atual == our_services.length - 1) {
+    var servico_seguinte = 0;
+  }else {
+    var servico_seguinte = servico_atual + 1;
+  }
+
+  document.getElementById("service-title").innerHTML = our_services[servico_seguinte].title;
+
+  document.getElementById("service-text").innerHTML = our_services[servico_seguinte].text;
+
+  servico_atual = servico_seguinte;
+};
 
 
 // Data Footer
